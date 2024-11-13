@@ -1,0 +1,214 @@
+/* Importa fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap');
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(332deg, rgba(34,49,63,1) 0%, rgba(25,25,25,1) 100%);
+    color: #f9f9f9;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Estilo del encabezado */
+header {
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: background-color 0.3s, height 0.3s;
+}
+
+.title-1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    margin: 0;
+    color: #ffae42;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.title-1:hover {
+    color: #ffd280;
+}
+
+/* Estilo de la barra de navegación */
+.container-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.link-nav {
+    background-color: #ffae42;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    color: #333;
+    border-radius: 1rem;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.link-nav:hover {
+    background-color: #ff8a00;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Estilo de las secciones */
+section {
+    margin-top: 10rem;
+    padding: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    color: #ff5e57;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo de los párrafos */
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo del pie de página */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: rgba(20, 20, 20, 0.9);
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: relative;
+}
+
+/* Efectos de transición */
+button, .link-nav, .title-1, h2 {
+    transition: all 0.3s ease;
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 768px) {
+    .container-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .link-nav {
+        width: 100%;
+        height: auto;
+        padding: 1.2rem;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    .title-1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+/* Estilo para el árbol */
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.node {
+    padding: 1rem;
+    background-color: #ffae42;
+    border: 2px solid #ff8a00;
+    border-radius: 8px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.5rem 0;
+    width: 120px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.node:hover {
+    background-color: #ff8a00;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.root {
+    background-color: #ff5e57;
+    border-color: #ff3b2f;
+    color: #fff;
+}
+
+/* Estilo para las ramas */
+.branches {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+}
+
+.branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Línea entre nodos */
+.branch::before {
+    content: '';
+    position: absolute;
+    top: -1.5rem;
+    width: 2px;
+    height: 1.5rem;
+    background-color: #ff8a00;
+}
+
+.branches > .branch::before {
+    left: 50%;
+    width: 100%;
+    height: 2px;
+}
+
+.branches > .branch:nth-child(1)::before {
+    transform: translateX(-50%);
+}
+
+.branches > .branch:nth-child(2)::before {
+    transform: translateX(-50%);
+}
